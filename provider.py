@@ -105,6 +105,11 @@ def load_h5_data_label_seg(h5_filename):
     seg = f['pid'][:]
     return (data, label, seg)
 
+def load_h5_data_seg(h5_filename):
+    f = h5py.File(h5_filename)
+    data = f['data'][:]
+    seg = f['pid'][:]
+    return (data, seg)
 
 def loadDataFile_with_seg(filename):
-    return load_h5_data_label_seg(filename)
+    return load_h5_data_seg(filename)
